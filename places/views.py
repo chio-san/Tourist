@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Place
 from .forms import PlaceForm
 
@@ -37,3 +37,8 @@ def delete_place(request, id):
     place_object = Place.objects.get(id=id)
     place_object.delete()
     return redirect(places) 
+
+
+class Cbv:
+    def my_method(self):
+        return HttpResponse('Hello world')
